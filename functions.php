@@ -1,4 +1,16 @@
 <?php
+
+function addScripts() {
+    wp_enqueue_script('script-ajax', get_theme_file_uri('/js/cript.js'), array('jquery'), '2.1.2', true); 
+
+    wp_localize_script('script-ajax', 'Sandia', array('ajaxUrl' => admin_url('admin-ajax.php')));
+
+}
+add_action('wp_enqueue_scripts', 'addScripts');
+
+
+
+
     add_action('wp_ajax_nopriv_funcion_filtro', 'funcion_filtro');
     add_action('wp_ajax_funcion_filtro', 'funcion_filtro');
 

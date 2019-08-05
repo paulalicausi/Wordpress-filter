@@ -1,7 +1,7 @@
     <form action="<?php echo site_url(); ?>/wp-admin/admin-ajax.php" method="POST" id="filtro">
       <?php
-        if( $terms = get_terms( array( 'taxonomy' => 'categoria_carreras', 'orderby' => 'name' ) ) ) :
-          echo '<select name="categoriafiltro"><option value="">Select categoria...</option>';
+        if( $terms = get_terms( array( 'taxonomy' => 'categoria', 'orderby' => 'name' ) ) ) :
+          echo '<select name="categoriafiltro"><option value="">Selecionar categoria...</option>';
           foreach ( $terms as $term ) :
             echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
           endforeach;

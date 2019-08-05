@@ -5,12 +5,11 @@ $('#filtro').submit(function(){
         data:filtro.serialize(),
         type:filtro.attr('method'),
         beforeSend:function(xhr){
-          filtro.find('button').text('Processing...');
+          filtro.find('button').text('Procesando...');
         },
         success:function(data){
-          filtro.find('button').text('Apply filtro');
-          $('#response').html(data);
-          $('#carreras').addClass('hide');
+          filtro.find('button').text('Aplicar filtro');
+          $('#resultados').html(data);
         }
       });
       return false;
